@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link href="<link rel=" "preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&family=Teko:wght@300&display=swap" >
+        
+        
+    <title>Game Board</title>
+    <style>
+        /* CSS reset */
+
+        .hero {
+            background-image: url(bg\ images/arcade.jpg);
+            background-size: cover;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            width: 100%;
+
+            background-size: cover;
+
+            background-position: center;
+            background-repeat: no-repeat;
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+        #board-container {
+            width: auto;
+            height: auto;
+            margin: auto;
+            border: auto;
+            padding: auto;
+            height: 900px;
+            width: 900px;
+            padding-top: 4%;
+
+
+
+
+
+        }
+
+
+        .row {
+            height: fit-content;
+            width: fit-content;
+
+        }
+
+        .cell {
+            /* border: 1px solid blue; */
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 0px;
+
+        }
+
+        .black {
+            background-color: rgb(37, 34, 34);
+            animation: checker;
+        }
+
+        .red {
+            background-color: rgba(150, 19, 19, 0.89);
+            animation: checker;
+        }
+
+        .checker {
+            margin: 10px;
+            border-radius: 50%;
+            height: 80px;
+            width: 80px;
+            cursor: grab;
+            filter: drop-shadow(4px 4px 4px, rgba(167, 183, 224, 0.247));
+
+
+
+        }
+
+        .checker:hover {
+            opacity: 1;
+            background-color: antiquewhite;
+        }
+
+        @-webkit-keyframes checker {
+            0% {
+                opacity: .3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes checker {
+            0% {
+                opacity: .3;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes checker {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes checker {
+
+            0%,
+            50%,
+            100% {
+                opacity: 1;
+            }
+
+            25%,
+            75% {
+                opacity: 0;
+            }
+        }
+
+        .red-checker {
+            background-color: rgb(175, 25, 25);
+            /* -webkit-animation: checker 4s infinite; */
+            animation: checker;
+
+
+
+        }
+
+        #red-checker-piece {
+            background-color: rgb(158, 7, 7);
+            /* -webkit-animation: checker 4s infinite; */
+            animation: checker;
+
+        }
+
+        .black-checker {
+            background-color: rgb(24, 3, 3);
+            animation: checker;
+
+        }
+
+        #black-checker-piece {
+            background-color: rgb(24, 3, 3);
+            animation: checker;
+        }
+
+
+        .btn-3d {
+            position: relative;
+            display: inline-block;
+            font-size: 22px;
+            padding: 20px 60px;
+            color: white;
+            margin: 20px 10px 10px;
+            border-radius: 6px;
+            text-align: center;
+            transition: top .01s linear;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 15%);
+        }
+
+        .btn-3d.red {
+            background-color: #e74c3c;
+            box-shadow: 0 0 0 1.5px #c63702 inset, 0 0 0 2px rgb(255 255 255 / 15%) inset, 0 8px 0 0 #c24032, 0 8px 0 1px rgb(0 0 0 / 40%), 0 8px 8px 1px rgb(0 0 0 / 50%);
+            cursor: pointer;
+
+
+        }
+
+        #btn-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            border: 10px;
+
+
+
+
+        }
+
+        .btn-3d.red:hover {
+            background-color: #e74c3c;
+            color: #e76e61;
+
+        }
+
+
+        .btn-3d:active {
+            top: 9px;
+        }
+
+        .chooseClr {
+
+            font-size: 22px;
+            margin: 10px;
+            padding: 10px;
+            border: 10px;
+
+            color: rgb(62, 66, 100);
+
+            border-radius: 6px;
+            text-align: center;
+            transition: top .01s linear;
+            text-shadow: 0 1px 0 rgb(0 0 0 / 15%);
+
+
+
+
+        }
+
+        #flexContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+
+
+
+
+
+
+        }
+
+        #chooseClrTxt {
+
+            font-family: 'Teko', sans-serif;
+            display: flex;
+            flex-direction: column;
+            margin: 2.5px;
+            padding: 2.5px;
+            border: 2.5px;
+            text-align: center;
+            font-size: 28px;
+            display: none;
+
+
+
+
+
+
+
+
+
+
+        }
+
+        #blkClr:hover {
+            color: red;
+            text-shadow: 1px 1px 10px #d37d74;
+            cursor: pointer;
+
+        }
+
+        #redClr:hover {
+            color: red;
+            text-shadow: 1px 1px 10px #d37d74;
+            cursor: pointer;
+        }
+
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+
+        }
+
+        .TITLE {
+
+
+            display: flex;
+            position: fixed;
+            justify-content: left;
+
+            align-content: center;
+            font-size: 40px;
+            bottom: 80%;
+
+
+            font-style: italic;
+
+
+        }
+
+        .hr {
+            color: aqua;
+            background-color: aquamarine;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script>
+        const chooseClrTxt = document.getElementById("chooseClrTxt");
+
+
+
+
+
+
+    </script>
+
+    <div class="hero">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="flexContainer">
+
+            <div id="btn-container" class="btn-container">
+                <button onclick="playFunction()" id="plyBtn" href="#" class="btn-3d red">PLAY</button>
+            </div>
+
+            <div id="chooseClrTxt" class="chooseClr">
+                <p style="text-decoration-line: underline ; position: top; font-size: 40px; font: bold; margin: 0px;">
+                    Choose Your Color</p>
+                <div style="border: 0px; margin: 0px; padding: 0px; ">
+                    <p id="blkClr" onclick="chooseBlk()"
+                        style="float:left;border: 0px; margin: 0px; padding: 0px;font-size: 35px; ">Black</p>
+                    <p id="redClr" onclick="chooseRed()"
+                        style="float:right;border: 0px; margin: 0px; padding: 0px;font-size: 35px;">Red</p>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+        <element onclick="chooseRed()"></element>
+        <element onclick="chooseBlk()"></element>
+        <element onclick="playFunction()"></element>
+
+        <element onclick="Redpiece(this.getAttribute('class'))"></element>
+        
+        <element onclick="Blkpiece(this.getAttribute('class'))"></element>
+        
+        <element onclick="cellNum(this.getAttribute('ID'))"></element>
+
+
+
+
+        <div id="board-container">
+            <div id="row-1" class="row" style="border: 1px solid black">
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-1" class="cell red">
+
+                </div>
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-2" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 1"></div>
+                </div>
+
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-3" class="cell red">
+
+                </div>
+
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-4" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 2"></div>
+                </div>
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-5" class="cell red">
+
+                </div>
+
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-6" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 3"></div>
+                </div>
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-7" class="cell red">
+
+                </div>
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-1-8" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 4"></div>
+                </div>
+            </div>
+
+
+            <div id="row-2" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-1" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 5"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-2" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-3" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 6"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-4" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-5" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 7"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-6" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-7" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 8"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-2-8" class="cell red">
+
+                </div>
+            </div>
+
+            <div id="row-3" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-1" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-2" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 9"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-3" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-4" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 10"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-5" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-6" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 11"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-7" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-3-8" class="cell black">
+                    <div onclick="Redpiece(this.getAttribute('class'))" id="red-checker-piece"
+                        class="checker red-checker 12"></div>
+                </div>
+            </div>
+
+            <div id="row-4" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-1" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-2" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-3" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-4" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-5" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-6" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-7" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-4-8" class="cell red">
+
+                </div>
+            </div>
+
+            <div id="row-5" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-1" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-2" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-3" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-4" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-5" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-6" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-7" class="cell red">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-5-8" class="cell black">
+
+                </div>
+            </div>
+
+            <div id="row-6" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-1" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this)" id="cell-6-2" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 12"></div>
+                </div>
+
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-3" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-4" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 13"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-5" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-6" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 14"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-7" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-6-8" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 15"></div>
+                </div>
+            </div>
+
+            <div id="row-7" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-1" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 16"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-2" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-3" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 17"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-4" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-5" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 18"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-6" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-7" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 19"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-7-8" class="cell black">
+
+                </div>
+            </div>
+
+            <div id="row-8" class="row" style="border: 1px solid black">
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-1" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-2" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 20"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-3" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-4" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 21"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-5" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-6" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 22"></div>
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-7" class="cell black">
+
+                </div>
+                <div onclick="cellNum(this.getAttribute('ID'))" id="cell-8-8" class="cell red">
+                    <div onclick="Blkpiece(this.getAttribute('class'))" id="black-checker-piece"
+                        class="checker black-checker 23"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="TITLE">
+            <h2>
+                CHECKERS
+            </h2>
+        </div> -->
+
+    </div>
+    <script src="checkers.js"></script>
+</body>
+
+</html>
