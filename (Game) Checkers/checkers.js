@@ -126,22 +126,29 @@ function playFunction(){
    }); */
 
 
- nextMove ="";
- clickedPiece ="";
- clickedCell ="";
- newCell1X = "";
- newCell1Y = "";
+  nextMove ="";
+  clickedPiece ="";
+  clickedCell ="";
+
+  newCell1X = "";
+  newCell1Y = "";
 
   newCell2X = "";
   newCell2Y = "";
+
   newCell1 = "";
   newCell2 = "";
- newHiglightedCell1 = "";
- newHiglightedCell2 = "";
- availableMove1 = ""; 
- availableMove2 = ""; 
- availableMove3 = ""; 
- availableMove4 = ""; 
+
+  newHiglightedCell1 = "";
+  newHiglightedCell2 = "";
+
+  availableMove1 = ""; 
+  availableMove2 = ""; 
+  availableMove3 = ""; 
+  availableMove4 = ""; 
+
+  charX = "";
+  charY = "";
 
 
 function Piece_Click(clicked){
@@ -164,8 +171,7 @@ function cellNum(cellId){
   console.log("clicked cell: \n" + clickedCell + "\n var = clickedCell");
 
 
-    let charX = 0;
-    let charY = 0;
+    
   
     charX = clickedCell.charAt(5);
     charY = clickedCell.charAt(7);
@@ -177,15 +183,34 @@ function cellNum(cellId){
 
     var one = 1;
     var placeHolder = null;
+
+    if(currentPiece = 
+    "checker red-checker 1" ||
+    "checker red-checker 2" ||
+    "checker red-checker 3" ||
+    "checker red-checker 4" ||
+    "checker red-checker 5" ||
+    "checker red-checker 6" ||
+    "checker red-checker 7" ||
+    "checker red-checker 8" ||
+    "checker red-checker 9" ||
+    "checker red-checker 10"||
+    "checker red-checker 11"||
+    "checker red-checker 12" 
+    ){
+
+      console.log("alexa");
+
+    
     
     
       
 
-      newCell1X = (charX + one);
+      newCell1X = (parseInt(charX) + parseInt(1));
       newCell1Y = (charY - 1);
 
-      newCell2X = (1 + charX);
-      newCell2Y = (1 + charY);
+      newCell2X = (1 + parseInt(charX));
+      newCell2Y = (1 + parseInt(charY));
 
       newCell1 = ("cell-" + newCell1X + "-" + newCell1Y);
      
@@ -193,66 +218,27 @@ function cellNum(cellId){
       newCell2 = ("cell-" + newCell2X + "-" + newCell2Y);
       
 
-      
-
-      
-    
-
-
-
-
-
-      
 
       console.log(newHiglightedCell1);
       console.log("new cell 1 is \n" + newCell1 + "\n var = newCell1");
 
       console.log("new cell 2 is \n" + newCell2 + "\n var = newCell2");
-      
 
+
+    
       if(chosenColor = "Reddd"){
-
-
 
         if(document.getElementsByClassName('checker').clicked = true){
 
-
           if(clickedCell = "cell-3-2"){
 
-
-
-
-            
-  
-  
           }
-
-          
-
-
-
-
-
-
+      
         }
-
-
-
-
-
 
       }
 
-
-
-
-
-
-      
-      
-
       // "checker 4s infinite"
-
       
     }
 
