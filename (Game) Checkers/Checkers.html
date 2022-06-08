@@ -18,25 +18,18 @@
     <style>
         /* CSS reset */
 
-        .hero {
-            background-image: url(bg\ images/arcade.jpg);
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(bg\ images/arcade.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
             background-size: cover;
-            position: fixed;
-            z-index: -1;
-
-            width: 100vw;
-            height: 100vh;
-            width: 100%;
-
-            background-size: cover;
-
-            background-position: center;
-            background-repeat: no-repeat;
 
 
 
 
         }
+        
 
 
 
@@ -94,6 +87,7 @@
             width: 80px;
             cursor: grab;
             filter: drop-shadow(4px 4px 4px, rgba(167, 183, 224, 0.247));
+            
 
 
 
@@ -322,6 +316,24 @@
             color: aqua;
             background-color: aquamarine;
         }
+        #whosTurn{
+            font-size: 70px;
+            color: cadetblue;
+
+
+        }
+        div{
+            text-align: center;
+        }
+        .kingImg{
+            height:-webkit-fill-available;
+            width:-webkit-fill-available;
+            margin: 10px;
+            border-radius: 50%;
+            visibility: hidden;
+            
+            
+        }
         
     </style>
 </head>
@@ -338,8 +350,10 @@
 
     </script>
 
-    <div class="hero">
-    </div>
+    <div class="hero"></div>
+    
+
+    <p id="whosTurn">Move: </p>
 
 
 
@@ -399,8 +413,8 @@
                 </div>
 
                 <div  name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-2" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 1"
-                        class="checker red-checker 1"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 1"
+                        class="checker red-checker 1"><img id="King 1" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
 
 
@@ -410,8 +424,8 @@
 
 
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-4" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 2"
-                        class="checker red-checker 2"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red"  id="red-checker-piece 2"
+                        class="checker red-checker 2"><img id="King 2" class="kingImg" src="bg images/king.png" alt="" srcset=""> </div>
                 </div>
 
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-5" class="cell red">
@@ -420,8 +434,8 @@
 
 
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-6" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 3"
-                        class="checker red-checker 3"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 3"
+                        class="checker red-checker 3"><img id="King 3" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
 
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-7" class="cell red">
@@ -429,37 +443,37 @@
                 </div>
 
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-1-8" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 4"
-                        class="checker red-checker 4"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 4"
+                        class="checker red-checker 4"><img id="King 4" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
             </div>
 
 
             <div id="row-2" class="row" style="border: 1px solid black">
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-1" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 5"
-                        class="checker red-checker 5"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 5"
+                        class="checker red-checker 5"><img id="King 5" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-2" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-3" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 6"
-                        class="checker red-checker 6"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 6"
+                        class="checker red-checker 6"><img id="King 6" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-4" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-5" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 7"
-                        class="checker red-checker 7"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 7"
+                        class="checker red-checker 7"><img id="King 7" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-6" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-7" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 8"
-                        class="checker red-checker 8"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 8"
+                        class="checker red-checker 8"><img id="King 8" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-2-8" class="cell red">
 
@@ -471,29 +485,29 @@
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-2" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 9"
-                        class="checker red-checker 9"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 9"
+                        class="checker red-checker 9"><img id="King 9" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-3" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-4" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 10"
-                        class="checker red-checker 10"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 10"
+                        class="checker red-checker 10"><img id="King 10" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-5" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-6" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 11"
-                        class="checker red-checker 11"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 11"
+                        class="checker red-checker 11"><img id="King 11" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
                 <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-7" class="cell red">
 
                 </div>
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-3-8" class="cell black">
-                    <div  onclick="Redpiece(this.getAttribute('ID'))" id="red-checker-piece 12"
-                        class="checker red-checker 12"></div>
+                    <div  onclick="Redpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="red" id="red-checker-piece 12"
+                        class="checker red-checker 12"><img id="King 12" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
             </div>
 
@@ -552,96 +566,96 @@
             </div>
 
             <div id="row-6" class="row" style="border: 1px solid black">
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-1" class="cell black">
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-1" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 13"
+                        class="checker black-checker 13"><img id="King 13" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
+                </div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-2" class="cell red">
+                    
+                </div>
 
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-3" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 14"
+                        class="checker black-checker 14"><img id="King 14" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-2" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 13"
-                        class="checker black-checker 13"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-4" class="cell red">
+                    
                 </div>
-
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-3" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-5" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 15"
+                        class="checker black-checker 15"><img id="King 15" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-4" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 14"
-                        class="checker black-checker 14"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-6" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-5" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-7" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 16"
+                        class="checker black-checker 16"><img id="King 16" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-6" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 15"
-                        class="checker black-checker 15"></div>
-                </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-7" class="cell black">
-
-                </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-8" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 16"
-                        class="checker black-checker 16"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-6-8" class="cell red">
+                    
                 </div>
             </div>
 
             <div id="row-7" class="row" style="border: 1px solid black">
                 <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-1" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 17"
-                        class="checker black-checker 17"></div>
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-2" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-2" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 17"
+                        class="checker black-checker 17"><img id="King 17" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-3" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 18"
-                        class="checker black-checker 18"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-3" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-4" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-4" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 18"
+                        class="checker black-checker 18"><img id="King 18" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-5" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 19"
-                        class="checker black-checker 19"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-5" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-6" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-6" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 19"
+                        class="checker black-checker 19"><img id="King 19" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-7" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 20"
-                        class="checker black-checker 20"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-7" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-8" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-7-8" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 20"
+                        class="checker black-checker 20"><img id="King 20" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
             </div>
 
             <div id="row-8" class="row" style="border: 1px solid black">
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-1" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-1" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 21"
+                        class="checker black-checker 21"><img id="King 21" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-2" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 21"
-                        class="checker black-checker 21"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-2" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-3" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-3" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 22"
+                        class="checker black-checker 22"><img id="King 22" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-4" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 22"
-                        class="checker black-checker 22"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-4" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-5" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-5" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 23"
+                        class="checker black-checker 23"><img id="King 23" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-6" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 23"
-                        class="checker black-checker 23"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-6" class="cell red">
+                    
                 </div>
-                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-7" class="cell black">
-
+                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-7" class="cell black">
+                    <div onclick="Blkpiece(this.getAttribute('ID'))" data-isking="false" data-colorpiece="black" id="black-checker-piece 24"
+                        class="checker black-checker 24"><img id="King 24" class="kingImg" src="bg images/king.png" alt="" srcset=""></div>
                 </div>
-                <div name = "true" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-8" class="cell red">
-                    <div onclick="Blkpiece(this.getAttribute('ID'))" id="black-checker-piece 24"
-                        class="checker black-checker 24"></div>
+                <div name = "false" onclick="cellNum(this.getAttribute('ID'))" id="cell-8-8" class="cell red">
+                    
                 </div>
             </div>
 
