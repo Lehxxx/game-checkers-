@@ -317,9 +317,17 @@
             background-color: aquamarine;
         }
         #whosTurn{
-            font-size: 70px;
-            color: cadetblue;
-
+            font-size: 100px;
+            
+            text-align: center;
+            display: flex;
+            -ms-flex-align: center;
+            justify-content: center;
+            color: rgb(205, 194, 255);
+            text-decoration: underline;
+            text-shadow: 10px 2px 12px #0ec2da, 0 0 100px #000000;
+            
+            
 
         }
         div{
@@ -333,6 +341,12 @@
             visibility: hidden;
             
             
+        }
+        #whoWon{
+            font-size: 70px;
+            color: cadetblue;
+            
+
         }
         
     </style>
@@ -354,6 +368,8 @@
     
 
     <p id="whosTurn">Move: </p>
+
+    <p id="whoWon"> </p>
 
 
 
