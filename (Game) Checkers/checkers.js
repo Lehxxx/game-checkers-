@@ -27,6 +27,7 @@ const Blk = document.getElementsByClassName('black-checker');
  checker = document.getElementsByClassName('checker');
  whosTurn = document.getElementById('whosTurn');
 const kingImg = document.getElementsByClassName('kingImg');
+whoWon = document.getElementById('whoWon');
 
 
 
@@ -288,6 +289,7 @@ function cellNum(cellId){
   
   
   if(clickedCell){
+    console.log(red);
 
     
     
@@ -527,6 +529,8 @@ try {
     // RED BACKWARDS---------------------------------------------------------------------------------------------------------------------------------------------------
   
       
+    try {
+      
     
     
     if(currentPiece.dataset.isking == "king"){
@@ -692,12 +696,17 @@ try {
         }
       }
     
+    } catch ( e) {
+      //TODO: handle exception
+      console.log(e);
 
+    }
 
         // BLACK BACKWARDS---------------------------------------------------------------------------------------------------------------------------------------------------
       
+        try {
+          
         
-      
         if(currentPiece.dataset.isking == "king"){
 
           console.log("THE KING HAS RISEN");
@@ -866,9 +875,24 @@ try {
   
 
       }
+    } catch ( e) {
+      //TODO: handle exception
+      console.log(e);
+
+    }
    
   }
   else{
+
+
+    if(red.length == 0 ){
+      whoWon.innerText = "Black Wins!";
+      console.log("black wins");
+    }
+    if(Blk.length == 0 ){
+      whoWon.innerText = "Red Wins!";
+      console.log("red wins");
+    }
     
 
     try {
@@ -1357,6 +1381,9 @@ if(two && two.getAttribute("name") == "false"){
 
   
 //check if the piece is a king
+try {
+  
+
 
 
 
@@ -1464,9 +1491,14 @@ try {
 
 }
 
+} catch ( e) {
+  //TODO: handle exception
+  console.log(e);
 
+}
 
   //BLACK BACKWARDS HIGHLIGHTING NEXT PIECE----------------------------------------------------------------------------------------------
+try {
 
   
 
@@ -1575,7 +1607,11 @@ try {
 
       }
       
-    
+    } catch ( e) {
+      //TODO: handle exception
+      console.log(e);
+
+    }
 
 
 
