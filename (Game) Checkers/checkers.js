@@ -884,13 +884,17 @@ try {
   }
   else{
 
-
+    //who wins? TELL USER WHO WON -BLK
     if(red.length == 0 ){
-      whoWon.innerText = "Black Wins!";
+      whoWon.innerText = "BLACK WINS!";
+      whoWon.style.color = "black";
       console.log("black wins");
     }
+
+    //who wins? TELL USER WHO WON -RED
     if(Blk.length == 0 ){
-      whoWon.innerText = "Red Wins!";
+      whoWon.innerText = "RED WINS!";
+      whoWon.style.color = "red";
       console.log("red wins");
     }
     
