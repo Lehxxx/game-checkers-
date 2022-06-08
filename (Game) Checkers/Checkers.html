@@ -39,6 +39,7 @@
 
 
         #board-container {
+            position: relative;
             width: auto;
             height: auto;
             margin: auto;
@@ -326,6 +327,11 @@
             color: rgb(205, 194, 255);
             text-decoration: underline;
             text-shadow: 10px 2px 12px #0ec2da, 0 0 100px #000000;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            height: 0px;
+            
             
             
 
@@ -343,8 +349,26 @@
             
         }
         #whoWon{
-            font-size: 70px;
-            color: cadetblue;
+            font-size: 75px;
+            color: rgb(0, 0, 0);
+            text-shadow: 10px 2px 12px white, 0 0 100px #ffffff;
+            
+            
+	        display: flex;
+	        -webkit-text-stroke: 1.7px whitesmoke;
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            text-align: center;
+            vertical-align: middle;
+           bottom: 0px;
+           left: 50%;
+           
+            
+            
+            
+            
+            
             
 
         }
@@ -369,7 +393,7 @@
 
     <p id="whosTurn">Move: </p>
 
-    <p id="whoWon"> </p>
+    <p id="whoWon"> BLACK WINS</p>
 
 
 
