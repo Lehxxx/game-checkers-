@@ -28,6 +28,9 @@ const Blk = document.getElementsByClassName('black-checker');
  whosTurn = document.getElementById('whosTurn');
 const kingImg = document.getElementsByClassName('kingImg');
 whoWon = document.getElementById('whoWon');
+turnVariable = "blank";
+redLeft = document.getElementById('redLeft');
+blackLeft = document.getElementById('blackLeft');
 
 
 
@@ -40,6 +43,15 @@ whoWon = document.getElementById('whoWon');
 
 
 //  && onesPiece.match(/((black))/) && currentPiece.match(/((red))/)
+
+
+
+
+
+
+
+
+ 
 
 
 
@@ -90,6 +102,7 @@ function playFunction(){
               console.log(red[i].style.animation);
 
               whosTurn.innerText = "RED'S MOVE";
+              turnVariable = "red";
                       
 
             }
@@ -111,6 +124,7 @@ function playFunction(){
          console.log(Blk[i].style.animation);
          
          whosTurn.innerText = "BLACK'S MOVE";
+         turnVariable = "black";
           }          
           console.log(Blk);
 
@@ -120,12 +134,15 @@ function playFunction(){
 
        if(chosenColor == "Reddd"){
         whosTurn.innerText = "RED'S MOVE";
+        turnVariable = "red";
 
 
 
        }
        if(chosenColor == "Blackk"){
         whosTurn.innerText = "BLACK'S MOVE";
+        turnVariable = "black";
+        
 
 
 
@@ -285,11 +302,51 @@ try {
 
 
 
+
+
+
 function cellNum(cellId){
+
+  if(turnVariable == "black" && currentPiece.match(/(red)/) ){
+    return
+    
+
+
+  }
+  if(turnVariable == "red" && currentPiece.match(/(black)/) ){
+    return
+    
+
+
+  }
+
+  
   
   
   if(clickedCell){
+    redLeft.innerText = red.length;
+    blackLeft.innerText = Blk.length;
+
+    red.length
+
+
+
+
     console.log(red);
+    console.log(whosTurn.innerText);
+
+    
+
+
+
+    
+
+
+  //   if( document.getElementById(currentPiece).getAttribute("data-isking")=="king"){
+   
+  //    console.log("piece is king");
+   
+  //   }
 
     
     
@@ -388,11 +445,19 @@ function cellNum(cellId){
     if(currentPiece.match(/(red)/)){
       whosTurn.innerText = "Black's Turn";
 
+      turnVariable = "black";
+
     }
     if(currentPiece.match(/(black)/)){
       whosTurn.innerText = "Red's Turn";
+      turnVariable = "red";
 
     }
+
+    redLeft.innerText = red.length;
+    blackLeft.innerText = Blk.length;
+    
+    
     
 
     
@@ -533,7 +598,7 @@ try {
       
     
     
-    if(currentPiece.dataset.isking == "king"){
+    if(document.getElementById(currentPiece).getAttribute("data-isking")=="king"){
 
       console.log("THE KING HAS RISEN");
     
@@ -559,12 +624,17 @@ try {
       //change whos turn it is 
       if(currentPiece.match(/(red)/)){
         whosTurn.innerText = "Black's Turn";
+        turnVariable = "black";
   
       }
       if(currentPiece.match(/(black)/)){
         whosTurn.innerText = "Red's Turn";
+        turnVariable = "red";
   
       }
+
+      redLeft.innerText = red.length;
+      blackLeft.innerText = Blk.length;
       
   
       
@@ -707,7 +777,7 @@ try {
         try {
           
         
-        if(currentPiece.dataset.isking == "king"){
+        if(document.getElementById(currentPiece).getAttribute("data-isking")=="king"){
 
           console.log("THE KING HAS RISEN");
     
@@ -734,12 +804,17 @@ try {
       //change whos turn it is 
       if(currentPiece.match(/(red)/)){
         whosTurn.innerText = "Black's Turn";
+        turnVariable = "black";
   
       }
       if(currentPiece.match(/(black)/)){
         whosTurn.innerText = "Red's Turn";
+        turnVariable = "red";
   
       }
+
+      redLeft.innerText = red.length;
+      blackLeft.innerText = Blk.length;
       
   
       
@@ -1391,7 +1466,7 @@ try {
 
 
 
-if(currentKing == "king"){
+if(document.getElementById(currentPiece).getAttribute("data-isking")=="king"){
 
   console.log("THE KING HAS RISEN");
 
@@ -1506,7 +1581,7 @@ try {
 
   
 
-  if(currentKing == "king"){
+  if(document.getElementById(currentPiece).getAttribute("data-isking")=="king"){
 
     console.log("THE KING HAS RISEN");
   
